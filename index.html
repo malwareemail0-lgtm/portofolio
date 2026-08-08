@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sushan | Infrastructure Architect — Systems & Network Administration</title>
+  <meta name="description" content="Infrastructure Architect & Network Systems Administrator. Production-grade infrastructure, enterprise security, and automation. Linux, VMware, Proxmox, AWS, Active Directory." />
+  <meta name="keywords" content="systems administrator, network admin, infrastructure architect, linux, vmware, proxmox, aws, security" />
+  <meta name="author" content="Sushan" />
+  <meta property="og:title" content="Sushan | Infrastructure Architect" />
+  <meta property="og:description" content="Infrastructure Built to Scale. Security Built to Hold." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ═══════════ MATRIX RAIN CANVAS ═══════════ -->
+  <canvas id="matrix-canvas"></canvas>
+
+  <!-- ═══════════ BOOT SEQUENCE OVERLAY ═══════════ -->
+  <div id="boot-overlay">
+    <div id="boot-text"></div>
+  </div>
+
+  <!-- ═══════════ MAIN CONTENT (hidden during boot) ═══════════ -->
+  <div id="main-content">
+
+    <!-- ─── NAV BAR ─── -->
+    <nav class="nav-bar" id="nav-bar">
+      <div class="nav-brand">
+        <span class="prompt-char">root@infra</span><span class="prompt-colon">:</span><span class="prompt-path">~</span><span class="prompt-dollar">#</span>
+      </div>
+      <div class="nav-links">
+        <a href="#hero-section" class="nav-link">~/home</a>
+        <a href="#about-section" class="nav-link">~/whoami</a>
+        <a href="#projects-section" class="nav-link">~/projects</a>
+        <a href="#skills-section" class="nav-link">~/specs</a>
+        <a href="#lab-section" class="nav-link">~/lab</a>
+        <a href="#contact-section" class="nav-link">~/contact</a>
+      </div>
+      <div class="nav-badges">
+        <span class="badge badge-firewall" id="firewall-badge">🛡 FIREWALL: HARDENED</span>
+        <span class="badge badge-load" id="system-load-badge">
+          CPU: <span id="system-load-value">12</span>%
+          <span class="load-bar-wrap"><span class="load-bar" id="system-load-bar"></span></span>
+        </span>
+      </div>
+    </nav>
+
+    <!-- ═══════════ HERO SECTION ═══════════ -->
+    <section class="section hero-section" id="hero-section">
+      <div class="hero-inner">
+        <pre class="ascii-art" id="ascii-banner">
+ ███████╗██╗   ██╗███████╗██╗  ██╗ █████╗ ███╗   ██╗
+ ██╔════╝██║   ██║██╔════╝██║  ██║██╔══██╗████╗  ██║
+ ███████╗██║   ██║███████╗███████║███████║██╔██╗ ██║
+ ╚════██║██║   ██║╚════██║██╔══██║██╔══██║██║╚██╗██║
+ ███████║╚██████╔╝███████║██║  ██║██║  ██║██║ ╚████║
+ ╚══════╝ ╚═════╝ ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝
+        </pre>
+        <p class="ascii-subtitle">INFRASTRUCTURE ARCHITECT &bull; SYSTEMS ADMINISTRATOR</p>
+
+        <div class="hero-terminal" id="hero-typewriter">
+          <!-- Typewriter lines injected by JS -->
+        </div>
+
+        <h1 class="hero-headline glow-text">Infrastructure Built to Scale. Security Built to Hold.</h1>
+        <p class="hero-subtext">Network Admin &nbsp;|&nbsp; Systems Architect &nbsp;|&nbsp; Security-First Infrastructure</p>
+
+        <a href="#projects-section" class="cta-button" id="cta-projects">
+          <span class="prompt-char">$</span> // Access Projects <span class="cursor-blink">█</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ═══════════ ABOUT SECTION ═══════════ -->
+    <section class="section" id="about-section">
+      <div class="section-container">
+        <h2 class="section-title fade-in"><span class="comment-slashes">//</span> WHOAMI</h2>
+
+        <div class="terminal-block fade-in">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-header-text">about.sh</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line">
+              <span class="prompt">$</span>
+              <span class="command">cat /etc/about/sushan.conf</span>
+            </div>
+            <div class="terminal-output about-bio">
+              I'm Sushan, a Network &amp; Systems Administrator with obsessive attention to production stability and security. I architect infrastructure from bare metal (HPE ProLiant, Dell PowerEdge) to cloud (AWS), manage enterprise security stacks (Sophos, FortiGate, F5 BIG-IP), and automate everything that moves. I speak: Active Directory, Proxmox, VMware ESXi, Linux, PowerShell, and infrastructure breakdowns at 2 AM.
+            </div>
+          </div>
+        </div>
+
+        <div class="about-subsections">
+          <div class="subsection fade-in">
+            <h3 class="subsection-title"><span class="accent">#</span> Core Mindset</h3>
+            <p class="subsection-text">"Infrastructure is only as good as its weakest link. I build redundancy, test failover, automate recovery."</p>
+          </div>
+          <div class="subsection fade-in">
+            <h3 class="subsection-title"><span class="accent">#</span> Homelab</h3>
+            <p class="subsection-text">"Dell R710 ESXi environment, Proxmox cluster with ZFS, self-hosted Vaultwarden, Odoo instances, and way too many VMs."</p>
+          </div>
+          <div class="subsection fade-in">
+            <h3 class="subsection-title"><span class="accent">#</span> Philosophy</h3>
+            <p class="subsection-text">"Production systems don't break — people don't plan. I plan obsessively."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ PROJECTS SECTION ═══════════ -->
+    <section class="section" id="projects-section">
+      <div class="section-container">
+        <h2 class="section-title fade-in"><span class="comment-slashes">//</span> FEATURED PROJECTS</h2>
+
+        <div class="terminal-block fade-in" style="margin-bottom: 1.5rem;">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-header-text">projects.sh</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line">
+              <span class="prompt">$</span>
+              <span class="command">ls -lah /projects/infrastructure/</span>
+            </div>
+            <div class="terminal-output dim">total 5 projects &nbsp;&nbsp; drwxr-xr-x sushan infra 4096 Aug 08 15:21</div>
+          </div>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project 1: Active Directory Lab -->
+          <div class="project-card fade-in">
+            <div class="project-header">
+              <span class="project-status status-operational">●</span>
+              <span class="project-name">[ACTIVE_DIRECTORY_LAB]</span>
+            </div>
+            <div class="project-tree">
+              <div class="tree-line">├── <span class="tree-key">Domain:</span> dc01.saulgoodman.com</div>
+              <div class="tree-line">├── <span class="tree-key">Infra:</span> AWS EC2 (DC01 + DC02 replication)</div>
+              <div class="tree-line">├── <span class="tree-key">Stack:</span> Windows Server 2022, Kerberos auth flow, GPO deployment</div>
+              <div class="tree-line">├── <span class="tree-key">Outcome:</span> Production-ready two-DC lab, documented for Medium/LinkedIn</div>
+              <div class="tree-line">└── <span class="tree-key">Status:</span> <span class="status-text operational">OPERATIONAL ✓</span></div>
+            </div>
+          </div>
+
+          <!-- Project 2: Vaultwarden Migration -->
+          <div class="project-card fade-in">
+            <div class="project-header">
+              <span class="project-status status-hardened">●</span>
+              <span class="project-name">[VAULTWARDEN_MIGRATION]</span>
+            </div>
+            <div class="project-tree">
+              <div class="tree-line">├── <span class="tree-key">Platform:</span> vault.tejastech.com.np</div>
+              <div class="tree-line">├── <span class="tree-key">Challenge:</span> F5 BIG-IP SSL termination + Zoho SMTP routing issue</div>
+              <div class="tree-line">├── <span class="tree-key">Resolution:</span> Fixed config.json schema, upgraded to latest Vaultwarden, fixed cert chain</div>
+              <div class="tree-line">├── <span class="tree-key">Result:</span> 100% uptime, 0 cert errors, team migration complete</div>
+              <div class="tree-line">└── <span class="tree-key">Status:</span> <span class="status-text hardened">HARDENED ✓</span></div>
+            </div>
+          </div>
+
+          <!-- Project 3: Sophos Central Automation -->
+          <div class="project-card fade-in">
+            <div class="project-header">
+              <span class="project-status status-automated">●</span>
+              <span class="project-name">[SOPHOS_CENTRAL_AUTOMATION]</span>
+            </div>
+            <div class="project-tree">
+              <div class="tree-line">├── <span class="tree-key">Client:</span> Mahalaxmi Bikas Bank Ltd.</div>
+              <div class="tree-line">├── <span class="tree-key">Output:</span> Multi-tier reporting (technical + management dashboards)</div>
+              <div class="tree-line">├── <span class="tree-key">Tools:</span> 9-file CSV/PDF export pipeline → Word document reports</div>
+              <div class="tree-line">├── <span class="tree-key">Cadence:</span> Recurring monthly reports across 3 reporting cycles</div>
+              <div class="tree-line">└── <span class="tree-key">Status:</span> <span class="status-text automated">AUTOMATED ✓</span></div>
+            </div>
+          </div>
+
+          <!-- Project 4: ESXi Infrastructure -->
+          <div class="project-card fade-in">
+            <div class="project-header">
+              <span class="project-status status-optimized">●</span>
+              <span class="project-name">[ESXI_INFRASTRUCTURE]</span>
+            </div>
+            <div class="project-tree">
+              <div class="tree-line">├── <span class="tree-key">Hardware:</span> Dell PowerEdge R710 (Westmere CPU)</div>
+              <div class="tree-line">├── <span class="tree-key">OS:</span> VMware ESXi 7.0 (ESXi 8 incompatible with R710)</div>
+              <div class="tree-line">├── <span class="tree-key">Storage:</span> vCenter management, snapshot optimization</div>
+              <div class="tree-line">├── <span class="tree-key">Lab:</span> Testing backup/DR with Acronis Cyber Protect</div>
+              <div class="tree-line">└── <span class="tree-key">Status:</span> <span class="status-text optimized">OPTIMIZED ✓</span></div>
+            </div>
+          </div>
+
+          <!-- Project 5: Branch Connectivity -->
+          <div class="project-card fade-in">
+            <div class="project-header">
+              <span class="project-status status-resolved">●</span>
+              <span class="project-name">[BRANCH_CONNECTIVITY]</span>
+            </div>
+            <div class="project-tree">
+              <div class="tree-line">├── <span class="tree-key">Platform:</span> Odoo (odoo.trivenitrade.com)</div>
+              <div class="tree-line">├── <span class="tree-key">Issue:</span> Asymmetric routing + host-based filtering blocking traffic</div>
+              <div class="tree-line">├── <span class="tree-key">Diagnosis:</span> Traced packet loss to Ubuntu firewall + routing table</div>
+              <div class="tree-line">├── <span class="tree-key">Fix:</span> AD DNS workaround + iptables rules tuning</div>
+              <div class="tree-line">└── <span class="tree-key">Status:</span> <span class="status-text resolved">RESOLVED ✓</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ SKILLS SECTION ═══════════ -->
+    <section class="section" id="skills-section">
+      <div class="section-container">
+        <h2 class="section-title fade-in"><span class="comment-slashes">//</span> SYSTEM SPECIFICATIONS</h2>
+
+        <div class="skills-dashboard">
+
+          <div class="skill-panel fade-in">
+            <div class="panel-header">
+              <span class="panel-icon">⚙</span> HYPERVISORS &amp; VIRTUALIZATION
+            </div>
+            <div class="panel-tags">
+              <span class="skill-tag">Proxmox VE</span>
+              <span class="skill-tag">VMware ESXi</span>
+              <span class="skill-tag">KVM/libvirt</span>
+              <span class="skill-tag">QEMU</span>
+              <span class="skill-tag">vCenter</span>
+              <span class="skill-tag">EVC</span>
+              <span class="skill-tag">DRS</span>
+            </div>
+          </div>
+
+          <div class="skill-panel fade-in">
+            <div class="panel-header">
+              <span class="panel-icon">☁</span> CLOUD &amp; INFRASTRUCTURE
+            </div>
+            <div class="panel-tags">
+              <span class="skill-tag">AWS EC2</span>
+              <span class="skill-tag">Proxmox API</span>
+              <span class="skill-tag">Infrastructure IaC</span>
+              <span class="skill-tag">PowerShell DSC</span>
+              <span class="skill-tag">Terraform</span>
+            </div>
+          </div>
+
+          <div class="skill-panel fade-in">
+            <div class="panel-header">
+              <span class="panel-icon">🔒</span> SECURITY &amp; NETWORK
+            </div>
+            <div class="panel-tags">
+              <span class="skill-tag">Sophos XG/XGS</span>
+              <span class="skill-tag">FortiGate</span>
+              <span class="skill-tag">F5 BIG-IP</span>
+              <span class="skill-tag">Active Directory</span>
+              <span class="skill-tag">Kerberos</span>
+              <span class="skill-tag">IPsec VPN</span>
+              <span class="skill-tag">DNS Hardening</span>
+              <span class="skill-tag">HSTS</span>
+              <span class="skill-tag">CSP Headers</span>
+            </div>
+          </div>
+
+          <div class="skill-panel fade-in">
+            <div class="panel-header">
+              <span class="panel-icon">🖥</span> SYSTEMS &amp; OS
+            </div>
+            <div class="panel-tags">
+              <span class="skill-tag">Ubuntu Server</span>
+              <span class="skill-tag">CentOS/RHEL</span>
+              <span class="skill-tag">Debian</span>
+              <span class="skill-tag">Windows Server 2022</span>
+              <span class="skill-tag">PowerShell</span>
+              <span class="skill-tag">Bash</span>
+              <span class="skill-tag">systemd</span>
+            </div>
+          </div>
+
+          <div class="skill-panel fade-in">
+            <div class="panel-header">
+              <span class="panel-icon">🗄</span> DATABASES &amp; STORAGE
+            </div>
+            <div class="panel-tags">
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">MySQL/MariaDB</span>
+              <span class="skill-tag">ZFS</span>
+              <span class="skill-tag">LVM</span>
+              <span class="skill-tag">NFS</span>
+              <span class="skill-tag">iSCSI</span>
+              <span class="skill-tag">RAID</span>
+            </div>
+          </div>
+
+          <div class="skill-panel fade-in">
+            <div class="panel-header">
+              <span class="panel-icon">🔄</span> BACKUP &amp; DR
+            </div>
+            <div class="panel-tags">
+              <span class="skill-tag">Acronis Cyber Protect</span>
+              <span class="skill-tag">Veeam</span>
+              <span class="skill-tag">Proxmox Backup</span>
+              <span class="skill-tag">Snapshots</span>
+              <span class="skill-tag">Failover Planning</span>
+              <span class="skill-tag">DR Runbooks</span>
+            </div>
+          </div>
+
+          <div class="skill-panel fade-in">
+            <div class="panel-header">
+              <span class="panel-icon">📡</span> MONITORING &amp; AUTOMATION
+            </div>
+            <div class="panel-tags">
+              <span class="skill-tag">Grafana</span>
+              <span class="skill-tag">Prometheus</span>
+              <span class="skill-tag">Zabbix</span>
+              <span class="skill-tag">Cron Jobs</span>
+              <span class="skill-tag">Ansible</span>
+              <span class="skill-tag">Python Scripting</span>
+            </div>
+          </div>
+
+          <div class="skill-panel fade-in">
+            <div class="panel-header">
+              <span class="panel-icon">🌐</span> WEB &amp; APPLICATION SERVICES
+            </div>
+            <div class="panel-tags">
+              <span class="skill-tag">Nginx</span>
+              <span class="skill-tag">Apache</span>
+              <span class="skill-tag">HAProxy</span>
+              <span class="skill-tag">Let's Encrypt</span>
+              <span class="skill-tag">Reverse Proxy</span>
+              <span class="skill-tag">Docker</span>
+              <span class="skill-tag">Docker Compose</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ LAB STATUS SECTION ═══════════ -->
+    <section class="section" id="lab-section">
+      <div class="section-container">
+        <h2 class="section-title fade-in"><span class="comment-slashes">//</span> CURRENT LAB STATUS</h2>
+
+        <div class="terminal-block fade-in">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-header-text">systemctl status lab</span>
+          </div>
+          <div class="terminal-body lab-status-body">
+            <div class="terminal-line">
+              <span class="prompt">$</span>
+              <span class="command">systemctl status lab</span>
+            </div>
+            <div class="terminal-output lab-output">
+              <div class="lab-main-status">
+                <span class="status-bullet operational">●</span> Lab Status: <span class="status-text operational">OPERATIONAL</span>
+              </div>
+              <div class="lab-tree">
+                <div class="tree-line lab-service">├─ <span class="lab-service-name">Proxmox Cluster:</span> <span class="status-text operational">RUNNING</span></div>
+                <div class="tree-line lab-service">├─ <span class="lab-service-name">Vaultwarden:</span> <span class="status-text operational">UP</span> <span class="dim">(vault.tejastech.com.np)</span></div>
+                <div class="tree-line lab-service">├─ <span class="lab-service-name">Odoo Instance:</span> <span class="status-text operational">UP</span> <span class="dim">(internal)</span></div>
+                <div class="tree-line lab-service">├─ <span class="lab-service-name">Active Directory Lab:</span> <span class="status-text operational">UP</span> <span class="dim">(dc01.saulgoodman.com)</span></div>
+                <div class="tree-line lab-service">├─ <span class="lab-service-name">Monitoring:</span> <span class="status-text operational">RUNNING</span></div>
+                <div class="tree-line lab-service">└─ <span class="lab-service-name">Uptime:</span> <span class="status-text accent">99.7%</span></div>
+              </div>
+              <div class="lab-meta">
+                <span class="dim">// Last Update: <span id="last-updated"></span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ BLOG SECTION ═══════════ -->
+    <section class="section" id="blog-section">
+      <div class="section-container">
+        <h2 class="section-title fade-in"><span class="comment-slashes">//</span> TECHNICAL ARTICLES</h2>
+
+        <div class="terminal-block fade-in">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-header-text">recent-posts.txt</span>
+          </div>
+          <div class="terminal-body">
+            <div class="terminal-line">
+              <span class="prompt">$</span>
+              <span class="command">ls /blog/</span>
+            </div>
+            <div class="terminal-output">
+              <div class="terminal-line dim" style="margin-bottom:0.5rem">recent-posts.txt:</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="blog-grid">
+          <article class="blog-item fade-in">
+            <span class="blog-icon">📄</span>
+            <div class="blog-content">
+              <h3 class="blog-title">"Why ESXi 8 Fails on Westmere CPUs (And How I Discovered It)"</h3>
+              <p class="blog-meta">Hardware compatibility deep-dive — CPU instruction sets &amp; VMware deprecation</p>
+            </div>
+            <span class="blog-tag">esxi</span>
+          </article>
+          <article class="blog-item fade-in">
+            <span class="blog-icon">📄</span>
+            <div class="blog-content">
+              <h3 class="blog-title">"Debugging F5 BIG-IP SSL Termination: A 4-Hour Troubleshooting Journey"</h3>
+              <p class="blog-meta">SSL cert chains, iRule debugging, and why Layer 7 routing matters</p>
+            </div>
+            <span class="blog-tag">f5</span>
+          </article>
+          <article class="blog-item fade-in">
+            <span class="blog-icon">📄</span>
+            <div class="blog-content">
+              <h3 class="blog-title">"Vaultwarden to Production: SSL Chains, SMTP Routing, and Config.json Hell"</h3>
+              <p class="blog-meta">Self-hosted password management with zero-trust deployment</p>
+            </div>
+            <span class="blog-tag">vaultwarden</span>
+          </article>
+          <article class="blog-item fade-in">
+            <span class="blog-icon">📄</span>
+            <div class="blog-content">
+              <h3 class="blog-title">"Active Directory Lab on AWS: Building Two-DC Replication from Scratch"</h3>
+              <p class="blog-meta">AD DS, DNS delegation, sites &amp; services, Kerberos trust</p>
+            </div>
+            <span class="blog-tag">active-directory</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ SYSTEM LOGS / CHALLENGE ACCEPTED ═══════════ -->
+    <section class="section" id="logs-section">
+      <div class="section-container">
+        <h2 class="section-title fade-in"><span class="comment-slashes">//</span> SYSTEM LOGS — CHALLENGE ACCEPTED</h2>
+
+        <div class="terminal-block fade-in">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-header-text">/var/log/challenges.log</span>
+          </div>
+          <div class="terminal-body logs-body">
+
+            <div class="log-entry">
+              <span class="log-timestamp">[2025-07-22 02:14:33]</span>
+              <span class="log-level critical">CRITICAL</span>
+              <span class="log-msg">Vaultwarden SMTP stopped sending verification emails. Zoho relay rejecting outbound. Traced to config.json schema change in upstream update. Rebuilt SMTP config, tested relay, restored service. Downtime: 0 min (caught in monitoring).</span>
+            </div>
+
+            <div class="log-entry">
+              <span class="log-timestamp">[2025-06-15 03:47:10]</span>
+              <span class="log-level warning">WARNING</span>
+              <span class="log-msg">F5 BIG-IP SSL termination presenting wrong cert to clients. Cert chain incomplete. Rebuilt chain from root CA → intermediate → leaf. Tested with openssl s_client. All endpoints verified.</span>
+            </div>
+
+            <div class="log-entry">
+              <span class="log-timestamp">[2025-05-08 01:22:55]</span>
+              <span class="log-level critical">CRITICAL</span>
+              <span class="log-msg">Branch office lost connectivity to Odoo ERP. Asymmetric routing between two WAN links. Packet capture showed return traffic hitting wrong interface. Fixed with policy-based routing + iptables SNAT rules.</span>
+            </div>
+
+            <div class="log-entry">
+              <span class="log-timestamp">[2025-04-20 14:05:41]</span>
+              <span class="log-level info">INFO</span>
+              <span class="log-msg">ESXi 8.0 installer fails on Dell R710 — CPUID check rejects Westmere (lacks AES-NI on this stepping). Confirmed via VMware HCL. Rolled back to ESXi 7.0u3. Documented CPU compatibility matrix for team.</span>
+            </div>
+
+            <div class="log-entry">
+              <span class="log-timestamp">[2025-03-11 23:31:17]</span>
+              <span class="log-level warning">WARNING</span>
+              <span class="log-msg">AD replication between DC01 and DC02 failing silently. Kerberos time skew > 5 minutes. Configured NTP hierarchy: DC01 → external NTP → DC02 syncs from DC01. Replication restored.</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ INTERACTIVE TERMINAL ═══════════ -->
+    <section class="section" id="terminal-section">
+      <div class="section-container">
+        <h2 class="section-title fade-in"><span class="comment-slashes">//</span> INTERACTIVE TERMINAL</h2>
+        <p class="section-subtitle fade-in dim">Type <span class="accent">'help'</span> for available commands</p>
+
+        <div class="terminal-block interactive-terminal-block fade-in" id="interactive-terminal">
+          <div class="terminal-header">
+            <span class="terminal-dot red"></span>
+            <span class="terminal-dot yellow"></span>
+            <span class="terminal-dot green"></span>
+            <span class="terminal-header-text">visitor@infra.admin: ~</span>
+          </div>
+          <div class="terminal-body interactive-body" id="terminal-history">
+            <div class="terminal-output dim">Welcome to Sushan's infrastructure terminal. Type 'help' for commands.</div>
+            <div class="terminal-output dim">──────────────────────────────────────────────────</div>
+          </div>
+          <div class="terminal-input-line">
+            <span class="prompt">visitor@infra:~$</span>
+            <input type="text" id="terminal-input" class="terminal-input" autocomplete="off" spellcheck="false" autofocus placeholder="type a command..." />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ CONTACT SECTION ═══════════ -->
+    <section class="section" id="contact-section">
+      <div class="section-container">
+        <h2 class="section-title fade-in"><span class="comment-slashes">//</span> ESTABLISH CONNECTION</h2>
+
+        <div class="contact-grid">
+          <a href="mailto:admin@sushan.io" class="contact-card fade-in" id="contact-email">
+            <div class="terminal-line">
+              <span class="prompt">$</span>
+              <span class="command">email</span>
+              <span class="output">admin@sushan.io</span>
+            </div>
+          </a>
+          <a href="https://github.com/your-handle" target="_blank" rel="noopener" class="contact-card fade-in" id="contact-github">
+            <div class="terminal-line">
+              <span class="prompt">$</span>
+              <span class="command">git clone</span>
+              <span class="output">github.com/your-handle</span>
+            </div>
+          </a>
+          <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener" class="contact-card fade-in" id="contact-linkedin">
+            <div class="terminal-line">
+              <span class="prompt">$</span>
+              <span class="command">linkedin connect</span>
+              <span class="output">/in/your-profile</span>
+            </div>
+          </a>
+          <div class="contact-card fade-in" id="contact-message">
+            <div class="terminal-line">
+              <span class="prompt">$</span>
+              <span class="command">message</span>
+              <span class="output">"Let's Talk Infrastructure"</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-meta fade-in">
+          <p class="dim">// Response time: &lt; 48 hours</p>
+          <p class="dim">// No recruiters selling SaaS tools</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <pre class="footer-ascii">
+┌──────────────────────────────────────────────────────────┐
+│  root@infra:~# uptime                                   │
+│  <span id="uptime-counter">00:00:00:00</span> up, load average: 0.42, 0.38, 0.35          │
+│                                                          │
+│  $ telnet admin@sushan.io                                │
+│  Trying 0.0.0.0...                                       │
+│  Connected. Infrastructure is listening.                  │
+└──────────────────────────────────────────────────────────┘
+        </pre>
+        <p class="footer-copy dim">© <span id="footer-year">2026</span> Sushan — Infrastructure Architect</p>
+        <p class="footer-copy dim">Built with vim, caffeine, and 2 AM packet captures.</p>
+      </div>
+    </footer>
+
+  </div><!-- end #main-content -->
+
+  <script src="main.js"></script>
+</body>
+</html>
