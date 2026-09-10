@@ -1,0 +1,235 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-space-grotesk: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-jetbrains-mono: 'JetBrains Mono', monospace;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-space-grotesk);
+    background-color: #fbf9f4;
+    color: #1b1c19;
+  }
+
+  body {
+    margin: 0;
+    padding: 0;
+    overscroll-behavior: none;
+    font-family: var(--font-space-grotesk);
+    font-size: 15px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+}
+
+/* Design System Spacing */
+:root {
+  --margin-mobile: 1.5rem;
+  --margin-tablet: 3rem;
+  --margin-desktop: 6rem;
+  --unit-1: 0.25rem;
+  --unit-2: 0.5rem;
+  --unit-3: 0.75rem;
+  --unit-4: 1rem;
+  --unit-6: 1.5rem;
+  --unit-8: 2rem;
+  --unit-12: 3rem;
+  --unit-16: 4rem;
+  --unit-20: 5rem;
+  --unit-24: 6rem;
+  --gutter: 2rem;
+}
+
+/* Typography Utility Classes */
+.font-headline-xl {
+  font-family: var(--font-space-grotesk);
+  font-size: clamp(2.5rem, 5vw + 1rem, 4.5rem);
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  font-weight: 600;
+}
+
+.font-headline-lg {
+  font-family: var(--font-space-grotesk);
+  font-size: clamp(1.75rem, 3vw + 1rem, 2.5rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+
+.font-headline-md {
+  font-family: var(--font-space-grotesk);
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 500;
+}
+
+.font-headline-sm {
+  font-family: var(--font-space-grotesk);
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.font-body-lg {
+  font-family: var(--font-space-grotesk);
+  font-size: 18px;
+  line-height: 28px;
+  font-weight: 400;
+}
+
+.font-body-md {
+  font-family: var(--font-space-grotesk);
+  font-size: 15px;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+.font-body-sm {
+  font-family: var(--font-space-grotesk);
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+.font-mono-md {
+  font-family: var(--font-jetbrains-mono);
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.02em;
+  font-weight: 400;
+}
+
+.font-mono-sm {
+  font-family: var(--font-jetbrains-mono);
+  font-size: 11px;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  font-weight: 400;
+}
+
+.font-label {
+  font-family: var(--font-jetbrains-mono);
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+/* Palette Color Classes */
+.bg-surface { background-color: #fbf9f4; }
+.bg-surface-dim { background-color: #dcdad5; }
+.bg-surface-bright { background-color: #fbf9f4; }
+.bg-surface-container-lowest { background-color: #ffffff; }
+.bg-surface-container-low { background-color: #f5f3ee; }
+.bg-surface-container { background-color: #f0eee9; }
+.bg-surface-container-high { background-color: #eae8e3; }
+.bg-surface-container-highest { background-color: #e4e2dd; }
+.bg-primary { background-color: #000000; }
+.bg-primary-container { background-color: #1a1b21; }
+.bg-secondary { background-color: #2563eb; }
+.bg-secondary-container { background-color: #1d4ed8; }
+.bg-inverse-surface { background-color: #30312e; }
+
+.text-on-surface { color: #1b1c19; }
+.text-on-surface-variant { color: #46464b; }
+.text-inverse-on-surface { color: #f2f1ec; }
+.text-outline { color: #76777b; }
+.text-outline-variant { color: #c6c6cb; }
+.text-on-primary { color: #ffffff; }
+.text-on-secondary { color: #ffffff; }
+.text-secondary { color: #2563eb; }
+.text-secondary-fixed { color: #93c5fd; }
+.text-secondary-fixed-dim { color: #60a5fa; }
+.text-tertiary-fixed { color: #22d3ee; }
+
+.border-outline { border-color: #76777b; }
+.border-outline-variant { border-color: #c6c6cb; }
+.border-surface-tint { border-color: #5d5e64; }
+.border-secondary { border-color: #2563eb; }
+.border-tertiary-fixed { border-color: #22d3ee; }
+
+/* Margins and Paddings Utilities matching Stitch */
+.px-margin-mobile { padding-left: var(--margin-mobile); padding-right: var(--margin-mobile); }
+.px-margin-desktop { padding-left: var(--margin-desktop); padding-right: var(--margin-desktop); }
+.p-margin-desktop { padding: var(--margin-desktop); }
+
+.py-unit-24 { padding-top: var(--unit-24); padding-bottom: var(--unit-24); }
+.py-unit-12 { padding-top: var(--unit-12); padding-bottom: var(--unit-12); }
+.py-unit-8 { padding-top: var(--unit-8); padding-bottom: var(--unit-8); }
+.py-unit-4 { padding-top: var(--unit-4); padding-bottom: var(--unit-4); }
+.py-unit-2 { padding-top: var(--unit-2); padding-bottom: var(--unit-2); }
+.py-unit-1 { padding-top: var(--unit-1); padding-bottom: var(--unit-1); }
+
+.px-unit-8 { padding-left: var(--unit-8); padding-right: var(--unit-8); }
+.px-unit-6 { padding-left: var(--unit-6); padding-right: var(--unit-6); }
+.px-unit-4 { padding-left: var(--unit-4); padding-right: var(--unit-4); }
+.px-unit-3 { padding-left: var(--unit-3); padding-right: var(--unit-3); }
+.px-unit-2 { padding-left: var(--unit-2); padding-right: var(--unit-2); }
+
+.p-unit-8 { padding: var(--unit-8); }
+.p-unit-6 { padding: var(--unit-6); }
+.p-unit-4 { padding: var(--unit-4); }
+.p-unit-3 { padding: var(--unit-3); }
+.p-unit-2 { padding: var(--unit-2); }
+
+.mb-unit-24 { margin-bottom: var(--unit-24); }
+.mb-unit-20 { margin-bottom: var(--unit-20); }
+.mb-unit-16 { margin-bottom: var(--unit-16); }
+.mb-unit-12 { margin-bottom: var(--unit-12); }
+.mb-unit-8 { margin-bottom: var(--unit-8); }
+.mb-unit-6 { margin-bottom: var(--unit-6); }
+.mb-unit-4 { margin-bottom: var(--unit-4); }
+.mb-unit-3 { margin-bottom: var(--unit-3); }
+.mb-unit-2 { margin-bottom: var(--unit-2); }
+.mb-unit-1 { margin-bottom: var(--unit-1); }
+
+.mt-unit-6 { margin-top: var(--unit-6); }
+.mt-unit-4 { margin-top: var(--unit-4); }
+.mt-unit-2 { margin-top: var(--unit-2); }
+
+.gap-unit-12 { gap: var(--unit-12); }
+.gap-unit-8 { gap: var(--unit-8); }
+.gap-unit-6 { gap: var(--unit-6); }
+.gap-unit-4 { gap: var(--unit-4); }
+.gap-unit-3 { gap: var(--unit-3); }
+.gap-unit-2 { gap: var(--unit-2); }
+.gap-unit-1 { gap: var(--unit-1); }
+
+.pt-unit-24 { padding-top: var(--unit-24); }
+.pt-unit-20 { padding-top: var(--unit-20); }
+.pt-unit-12 { padding-top: var(--unit-12); }
+.pt-unit-6 { padding-top: var(--unit-6); }
+
+/* Responsive adjustments for Stitch margins */
+@media (max-width: 1024px) {
+  .px-margin-desktop {
+    padding-left: var(--margin-tablet);
+    padding-right: var(--margin-tablet);
+  }
+  .p-margin-desktop {
+    padding: var(--margin-tablet);
+  }
+}
+
+@media (max-width: 640px) {
+  .px-margin-desktop {
+    padding-left: var(--margin-mobile);
+    padding-right: var(--margin-mobile);
+  }
+  .p-margin-desktop {
+    padding: var(--margin-mobile);
+  }
+  .py-unit-24 {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+  .mb-unit-20 {
+    margin-bottom: 3rem;
+  }
+  .mb-unit-16 {
+    margin-bottom: 2.5rem;
+  }
+}
