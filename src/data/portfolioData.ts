@@ -1,14 +1,14 @@
 import { SystemDomain, ProjectCaseStudy, Certification, FieldNote, EngineeringPrinciple } from '../types';
 
 export const PERSONAL_INFO = {
-  name: 'Sushan',
+  name: 'Sushan Paudyal',
   role: 'INFRA / CLOUD / SECURITY',
   tagline: 'I build, break, troubleshoot, and understand systems.',
   bio: "I'm Sushan, an infrastructure-focused engineer working across Linux, Windows Server, networking, Active Directory, virtualization, AWS, and security.",
   location: 'Kathmandu, Nepal • UTC +5:45',
   email: 'sushanpaudyal030@gmail.com',
-  github: 'https://github.com/sushanpaudyal',
-  linkedin: 'https://linkedin.com/in/sushan-paudyal',
+  github: 'https://github.com/susan-nnn',
+  linkedin: 'https://www.linkedin.com/in/sushan-paudyal-210002271/',
   focus: 'Cloud & Infra',
   currentLearning: 'AWS Solutions Architect Associate',
   profile: {
